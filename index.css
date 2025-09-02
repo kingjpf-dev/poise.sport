@@ -1,0 +1,137 @@
+/* Basic body styling with a modern font stack */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    background-color: #e6e6e6; /* A soft, light gray background color */
+    min-height: 100vh; /* Ensure the body is at least the height of the viewport */
+    display: flex; /* Use flexbox for body to push footer to the bottom */
+    flex-direction: column;
+}
+
+/* Header styling with a darker blue and increased padding */
+header {
+    background-color: #2F599A; /* Darker blue background */
+    padding: 25px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* More pronounced shadow */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo styling with a subtle shadow and larger size */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700; /* Gold color */
+    margin-left: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Container for the list */
+.horizontal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 40px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+/* Style for the individual list items */
+.horizontal-list li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    text-align: center;
+}
+
+/* Improved hover effect for the links */
+.horizontal-list li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Main content area */
+.main-content {
+    flex: 1; /* Allow main content to grow and push the footer down */
+    padding: 20px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #2F599A; /* Same dark blue as the header */
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15); /* Shadow on top */
+    text-align: center;
+}
+
+/* Footer list styling */
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-list li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-list li a:hover {
+    color: #FFD700; /* Gold color on hover */
+}
+
+/* Media query for all mobile devices */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo {
+        margin: 0 0 15px 0;
+    }
+
+    .horizontal-list {
+        /* Make the list scrollable horizontally on smaller screens */
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Add momentum scrolling for iOS */
+        gap: 20px; /* Reduce gap for tighter spacing */
+        padding: 0 10px; /* Add some padding to the sides */
+    }
+
+    .horizontal-list li {
+        flex-shrink: 0; /* Prevent list items from shrinking */
+    }
+
+    .horizontal-list li a {
+        font-size: 16px; /* Adjust font size for better readability */
+        padding: 8px 12px;
+    }
+    
+    .footer-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
